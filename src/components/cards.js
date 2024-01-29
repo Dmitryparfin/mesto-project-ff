@@ -6,28 +6,28 @@ const holmogorskImage = new URL('https://pictures.s3.yandex.net/frontend-develop
 const baikalImage = new URL('https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg', import.meta.url);
 
 export const initialCards = [
-    {
-      name: "Архыз",
-      link: arhizImage
-    },
-    {
-      name: "Донгузорун",
-      link: donguzorunImage
-    },
-    {
-      name: "Ушба",
-      link: ushbaImage
-    },
-    {
-      name: "Камчатка",
-      link: kamchatkaImage
-    },
-    {
-      name: "Холмогорский район",
-      link: holmogorskImage
-    },
-    {
-      name: "Байкал",
-      link: baikalImage
-    }
+  {
+    name: "Архыз",
+    link: arhizImage
+  },
+  {
+    name: "Донгузорун",
+    link: donguzorunImage
+  },
+  {
+    name: "Ушба",
+    link: ushbaImage
+  },
+  {
+    name: "Камчатка",
+    link: kamchatkaImage
+  },
+  {
+    name: "Холмогорский район",
+    link: holmogorskImage
+  },
+  {
+    name: "Байкал",
+    link: baikalImage
+  }
 ];
