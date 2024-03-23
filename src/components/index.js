@@ -82,8 +82,8 @@ function handleAddCard(evt) {
       const card = createCard(res, deleteBut, likeBut, res.owner, openImage, cardTemplate);
       container.prepend(card);
       closePopup(popupAddButton);
-      nameNewPlaceInput.value = '';
-      urlNewPlaceInput.value = '';
+      inputCardName.value = '';
+      inputPlaceUrl.value = '';
     })
     .catch((err) => {
       console.log(err);
