@@ -1,33 +1,28 @@
-const arhizImage = new URL('https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg', import.meta.url);
-const donguzorunImage = new URL('../images/Donguzorun.jpg', import.meta.url);
-const ushbaImage = new URL('../images/Ushba.jpg', import.meta.url);
-const kamchatkaImage = new URL('https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg', import.meta.url);
-const holmogorskImage = new URL('https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg', import.meta.url);
-const baikalImage = new URL('https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg', import.meta.url);
-
-export const initialCards = [
+const initialCards = [
   {
     name: "Архыз",
-    link: arhizImage
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
   },
   {
-    name: "Донгузорун",
-    link: donguzorunImage
+    name: "Челябинская область",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg",
   },
   {
-    name: "Ушба",
-    link: ushbaImage
+    name: "Иваново",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
   },
   {
     name: "Камчатка",
-    link: kamchatkaImage
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
   },
   {
     name: "Холмогорский район",
-    link: holmogorskImage
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg",
   },
   {
     name: "Байкал",
-    link: baikalImage
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
   }
 ];
+
+export {initialCards};
