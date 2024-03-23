@@ -28,7 +28,6 @@ const popupType = document.querySelector('.popup_type_image');
 const popupImage = document.querySelector('.popup__image');
 const popupCaption = document.querySelector('.popup__caption');
 const formElement = document.querySelector('.popup__form');
-
 const newCardForm = document.querySelector(".popup_type_new-card");
 const newCardContent = newCardForm.querySelector(".popup__content");
 const avatarForm = avatarPopup.querySelector('.popup__form');
@@ -147,7 +146,7 @@ popupType.addEventListener('click', () => closePopup(popupType));
 popupContainers.forEach((item) => {item.addEventListener('click', closePopupOverlay)})
 
 formElement.addEventListener('submit', handleUserFormSubmit);
-newPlaceForm.addEventListener('submit',  handleAddCard);
+newCardForm.addEventListener('submit',  handleAddCard);
 avatarForm.addEventListener('submit', handleEditAvatar);
 
 
