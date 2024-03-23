@@ -11,7 +11,7 @@ const addLike = (cardId) => {
       method: 'PUT',
       headers: config.headers,
     }).then((res) => {
-      return Error(res);
+      return checkResponse(res);
     });
   };
 
@@ -20,7 +20,7 @@ const removeLike = (cardId) => {
       method: 'DELETE',
       headers: config.headers,
     }).then((res) => {
-      return Error(res);
+      return checkResponse(res);
     });
   };
 
@@ -29,7 +29,7 @@ const deleteCard = (cardId) => {
     method: 'DELETE',
     headers: config.headers
   }).then((res) => {
-    return Error(res);
+    return checkResponse(res);
   });
 };
 
@@ -37,7 +37,7 @@ const getProfileData = () => {
   return fetch(`${config.baseUrl}/users/me`, {
     headers: config.headers
   }).then((res) => {
-    return Error(res);
+    return checkResponse(res);
   });
 };
 
@@ -45,27 +45,27 @@ const getInitialCards = () => {
   return fetch(`${config.baseUrl}/cards`, {
     headers: config.headers
   }).then((res) => {
-    return Error(res);
+    return checkResponse(res);
   });
 };
 
-const profileEdit = (evt) => {
+const profileEdit = (profileData) => {
   return fetch(`${config.baseUrl}/users/me`, {
     method: 'PATCH',
     headers: config.headers,
-    body: JSON.stringify(evt),
+    body: JSON.stringify(profileData),
   }).then((res) => {
-    return Error(res);
+    return checkResponse(res);
   });
 };
 
-const addCards = (evt) => {
+const addCards = (cardData) => {
   return fetch(`${config.baseUrl}/cards`, {
     method: 'POST',
     headers: config.headers,
-    body: JSON.stringify(evt),
+    body: JSON.stringify(cardData),
   }).then((res) => {
-    return Error(res);
+    return checkResponse(res);
   });
 };
 
@@ -78,11 +78,11 @@ const avatarEdit = (avatar) => {
     }),
   })
   .then((res) => {
-    return Error(res);
+    return checkResponse(res);
   });
 };
 
-const Error = (res) => {
+const checkResponse = (res) => {
   if (res.ok) {
     return res.json();
   }

@@ -11,6 +11,7 @@ function createCard(cardData, deleteBut, likeBut, openImage, data, cardTemplate)
 
   if(cardData.owner._id === data._id) {
     deleteButton.style.display = 'block';
+    deleteButton.addEventListener('click', () => deleteBut(cardElement, cardData._id));
   } else {
     deleteButton.style.display = 'none';
   }
@@ -25,7 +26,7 @@ function createCard(cardData, deleteBut, likeBut, openImage, data, cardTemplate)
   likeCounter.textContent = cardData.likes.length;
   
 
-  deleteButton.addEventListener('click', () => deleteBut(cardElement, cardData._id));
+  
   cardImage.addEventListener('click', () => openImage(cardImage));
   likeButton.addEventListener('click', () => likeBut(likeButton, cardData, likeCounter));
 
@@ -43,26 +44,13 @@ function deleteBut(card, cardId) {
 }
 
 function likeBut(evt, cardData, likeCounter) {
-  if(!evt.classList.contains('card__like-button_is-active')) {
-    addLike(cardData._id, 'PUT')
+  const likeMethod = evt.classList.contains('card__like-button_is-active') ? removeLike : addLike;
+  likeMethod(cardData._id) 
     .then((res) => {
-      likeCounter.textContent = res.likes.length;
-      evt.classList.toggle('card__like-button_is-active');
+      likeCounter.textContent = res.likes.length; 
+      evt.classList.toggle('card__like-button_is-active'); 
     })
-    .catch((err) => {
-      console.log(err);
-    })
-  }
-  else {
-    removeLike(cardData._id, 'DELETE')
-    .then((res) => {
-      likeCounter.textContent = res.likes.length;
-      evt.classList.toggle('card__like-button_is-active');
-    })
-    .catch((err) => {
-      console.log(err);
-    })
-  }
+  .catch(err => console.log(err));
 }
 
 export {createCard, deleteBut, likeBut} 

@@ -82,8 +82,6 @@ function handleAddCard(evt) {
       const card = createCard(res, deleteBut, likeBut, res.owner, openImage, cardTemplate);
       container.prepend(card);
       closePopup(popupAddButton);
-      inputCardName.value = '';
-      inputPlaceUrl.value = '';
     })
     .catch((err) => {
       console.log(err);
@@ -112,11 +110,7 @@ function handleEditAvatar(evt) {
 
 function renderLoading(loading, popup) {
   const popupButton = popup.target.querySelector('.popup__button');
-  if (loading) {
-    popupButton.textContent = 'Сохранение...';
-  } else {
-    popupButton.textContent = 'Сохранить';
-  }
+  popupButton.textContent =  loading ? 'Сохранение...' : 'Сохранить'
 }
 
 profileEditButton.addEventListener('click', () => {

@@ -4,16 +4,6 @@ function enableValidation(validationConfig) {
     formElement.addEventListener("submit", function (evt) {
       evt.preventDefault();
     });
-
-    const inputList = Array.from(formElement.querySelectorAll(validationConfig.inputSelector));
-    const buttonElement = formElement.querySelector(validationConfig.submitButtonSelector);
-    toggleButtonState(inputList, buttonElement, validationConfig);
-    inputList.forEach((inputElement) => {
-      inputElement.addEventListener("input", function () {
-        checkInputValidity(formElement, inputElement, validationConfig);
-        toggleButtonState(inputList, buttonElement, validationConfig);
-      });
-    });
     setEventListenersForm(formElement, validationConfig);
   });
 };
