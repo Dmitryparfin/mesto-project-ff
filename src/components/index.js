@@ -36,6 +36,8 @@ const inputCardName = newCardContent.querySelector('.popup__input_type_card-name
 const inputPlaceUrl = newCardContent.querySelector('.popup__input_type_url');
 const nameInput = formElement.querySelector('.popup__input_type_name');
 const jobInput = formElement.querySelector('.popup__input_type_description');
+const formCard = document.forms['new-place'];
+const formAvatar = document.forms['new-avatar'];
 
 const promises = [getProfileData(), getInitialCards()];
 
@@ -113,6 +115,10 @@ function renderLoading(loading, popup) {
   popupButton.textContent =  loading ? 'Сохранение...' : 'Сохранить'
 }
 
+function clearForm(form) {
+  form.reset();
+}
+
 profileEditButton.addEventListener('click', () => {
   nameInput.value = profileTitle.textContent;
   jobInput.value = profileJob.textContent;
@@ -121,14 +127,13 @@ profileEditButton.addEventListener('click', () => {
 });
 
 newCardAddButton.addEventListener('click', () => {
-  inputCardName.value = '';
-  inputPlaceUrl.value = '';
+  clearForm(formCard);
   clearValidation(plusPopupForm, validationConfig);
   openPopup(popupAddButton);
 });
 
 profileImg.addEventListener('click', () => {
-  inputPlaceUrl.value = '';
+  clearForm(formAvatar);
   clearValidation(avatarPopupFrom, validationConfig);
   openPopup(avatarPopup);
 });
